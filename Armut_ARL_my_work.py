@@ -134,6 +134,8 @@ def arl_recommender(rules_df, product_id, rec_count=1):
 # GÖREV 4. Sepet Aşamasındaki Kullanıcılara Ürün Önerisinde Bulunmak
 ############################################
 
+# Adım 3: arl_recommender fonksiyonunu kullanarak en son 2_0 hizmetini alan bir kullanıcıya hizmet önerisinde bulununuz.
+
 arl_recommender(rules,"2_0", 5)
 
 
