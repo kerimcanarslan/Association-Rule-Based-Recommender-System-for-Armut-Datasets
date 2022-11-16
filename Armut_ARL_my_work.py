@@ -4,9 +4,8 @@
 
 # 1. Veri Ön İşleme
 # 2. Birliktelik Kuralları Üretme ve Öneride Bulunma
-#
-# 4. Çalışmanın Scriptini Hazırlama
-# 5. Sepet Aşamasındaki Kullanıcılara Ürün Önerisinde Bulunmak
+# 3. Çalışmanın Scriptini Hazırlama
+# 4. Sepet Aşamasındaki Kullanıcılara Ürün Önerisinde Bulunmak
 
 ############################################
 # GÖREV 1. Veri Ön İşleme
@@ -103,7 +102,12 @@ rules = association_rules(support_itemsets, metric="support", min_threshold=0.01
 # antecedents, consequents, support, confidence ve lift derğerleri vardır.
 rules.head()
 rules.shape
+
 # Adım 3: arl_recommender fonksiyonunu kullanarak en son 2_0 hizmetini alan bir kullanıcıya hizmet önerisinde bulununuz.
+
+############################################
+# GÖREV 3. Çalışmanın Scriptini Hazırlama
+############################################
 
 def arl_recommender(rules_df, product_id, rec_count=1):
     sorted_rules = rules_df.sort_values("lift", ascending=False)
@@ -126,4 +130,10 @@ def arl_recommender(rules_df, product_id, rec_count=1):
     recommendation_list = list({item for item_list in recommendation_list for item in item_list})
     return recommendation_list[:rec_count] # :rec_count istenen sayıya kadar tavsiye ürün getir.
 
+############################################
+# GÖREV 4. Sepet Aşamasındaki Kullanıcılara Ürün Önerisinde Bulunmak
+############################################
+
 arl_recommender(rules,"2_0", 5)
+
+
