@@ -139,3 +139,4 @@ def arl_recommender(rules_df, product_id, rec_count=1):
 arl_recommender(rules,"2_0", 5)
 
 
+
